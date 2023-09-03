@@ -2,7 +2,8 @@
 let cells = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer = 'X';
 let result = document.querySelector('.result');
-let btns = document.querySelectorAll('.btn');
+let btns = document.querySelectorAll('.cell');
+let isGameOver = false; // Add this variable
 let conditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -19,7 +20,7 @@ const ticTacToe = (element, index) => {
     if (!cells[index] && !isGameOver) {
         // Update the cell and display X or O
         cells[index] = currentPlayer;
-        element.value = currentPlayer;
+        element.textContent = currentPlayer;
         element.classList.add(currentPlayer.toLowerCase());
 
         // Check for a win or draw
@@ -60,7 +61,7 @@ const resetGame = () => {
     currentPlayer = 'X';
     result.textContent = "Player X's Turn";
     btns.forEach(btn => {
-        btn.value = '';
+        btn.textContent = '';
         btn.classList.remove('x', 'o');
     });
     document.getElementById('reset-btn').disabled = true;
