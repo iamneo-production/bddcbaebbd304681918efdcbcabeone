@@ -1,4 +1,3 @@
-// Initial game state
 let cells = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer = 'X';
 let result = document.querySelector('.result');
@@ -64,7 +63,7 @@ const resetGame = () => {
         btn.value = '';
         btn.classList.remove('x', 'o');
     });
-    document.getElementById('reset-btn').disabled = true;
+    document.getElementById('reset')= true;
     isGameOver = false;
 };
 
